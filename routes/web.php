@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\PharmaProducts;
+use App\Http\Controllers\PharmaProductsController;
+use App\Models\AboutUs;
+use App\Models\PharmaProduct;
+use App\Models\Product;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PharmaProductsController::class, 'index']);
+// Route::get('/user', [UserController::class, 'index']);
 
 
 Route::group(['prefix' => 'admin'], function () {
